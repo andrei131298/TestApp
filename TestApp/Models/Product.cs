@@ -17,6 +17,8 @@ namespace TestApp.Models
 
         public string description { get; set; }
 
+        public DateTime createdAt { get; set; }
+
         public Guid categoryId { get; set; }
 
         public virtual Category category { get; set; }
