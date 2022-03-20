@@ -85,6 +85,7 @@ namespace TestApp
 
                 if (env.IsDevelopment())
                 {
+                    //npm start
                     spa.UseAngularCliServer(npmScript: "start");
                     //spa.UseProxyToSpaDevelopmentServer("http://localhost:4200");
                 }

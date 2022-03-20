@@ -1,28 +1,23 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using TestApp.Models;
 
 namespace TestApp.Controllers
 {
-    [Route("api/home")]
+    //[Route("[controller]")]
+    [Route("product")]
     [ApiController]
-    public class HomeController : ControllerBase
+    public class ProductController : ControllerBase
     {
-        public HomeController()
-        {
-        }
-
-        // GET: api/Home
+        // GET: /product
         [HttpGet]
         public string Get()
         {
             return "corect";
         }
 
+        public ProductController() { }
     }
 }
