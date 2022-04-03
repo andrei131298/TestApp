@@ -7,7 +7,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using TestApp.Contexts;
+using TestApp.Interfaces;
+using TestApp.IServices;
 using TestApp.Models;
+using TestApp.Repositories;
+using TestApp.Services;
 
 namespace TestApp
 {
@@ -30,8 +34,12 @@ namespace TestApp
 
             services.AddCors();
            services.AddDbContext<Context>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-           //services.AddTransient<ICityRepository, CityRepository>();
-           
+            //services.AddTransient<ICityRepository, CityRepository>();
+            services.AddTransient<IProductRepository, ProductRepository>();
+            services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<ICategoryRepository, CategoryRepository>();
+            services.AddTransient<ICategoryService, CategoryService>();
+
             services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
 
             services.AddControllersWithViews().AddNewtonsoftJson(options =>
