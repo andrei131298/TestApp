@@ -1,0 +1,20 @@
+<mat-card class="card" (click)="emitClick()">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{ categoryInput.name }}</mat-card-title>
+  </mat-card-header>
+  <img
+    mat-card-image
+    *ngIf="!categoryInput.image"
+    src="assets/images/placeholder.png"
+  />
+  <img
+    *ngIf="categoryInput.image"
+    mat-card-image
+    [src]="categoryInput.image"
+    alt="Photo of a Shiba Inu"
+  />
+  <mat-card-actions>
+    <button mat-button (click)="navigateToCategory(categoryInput)">OPEN</button>
+  </mat-card-actions>
+</mat-card>

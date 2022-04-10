@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  &__shop {
+    margin-right: 10px;
+    font-size: 30px;
+  }
+}
+
+.categories {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+
+  &__card {
+    width: 30%;
+    margin-bottom: 16px;
+  }
+}

@@ -8,6 +8,7 @@ namespace TestApp.IServices
 {
     public interface ICategoryService
     {
+        List<Category> GetAll();
         List<Category> Create(Category category);
 
     }

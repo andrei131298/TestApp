@@ -19,6 +19,11 @@ namespace TestApp.Services
 
         }
 
+        public List<Category> GetAll(){
+           return _categoryRepository.GetAll();
+        }
+
+
         public List<Category> Create(Category category)
         {
             _categoryRepository.Create(category);

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using TestApp.IServices;
 using TestApp.Models;
 
@@ -13,6 +14,17 @@ namespace TestApp.Controllers
         public CategoryController(ICategoryService categoryService)
         {
             _categoryService = categoryService;
+        }
+
+        [HttpGet]
+        public ActionResult<List<Category>> GetAll()
+        {
+            var allCategories = _categoryService.GetAll();
+
+            if (allCategories == null)
+                return StatusCode(500);
+
+            return Ok(allCategories);
         }
 
         [HttpPost]

@@ -1,0 +1,12 @@
+<mat-toolbar class="header" color="primary">
+  <mat-icon class="header__shop">shop</mat-icon>
+  <span>Andrei's Shop</span>
+</mat-toolbar>
+<div class="categories">
+  <app-category-card
+    class="categories__card"
+    *ngFor="let category of allCategories"
+    [categoryInput]="category"
+    (categoryOutput)="receiveOutput($event)"
+  ></app-category-card>
+</div>
